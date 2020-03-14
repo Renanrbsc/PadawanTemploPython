@@ -26,14 +26,19 @@ class Player(BlackJackDefinitions):
         return super().randomize_card(game_cards)
         
     def player_decision_to_pick_up_the_card(self, card):
-        if self.sum_result >= 11:
+        print(f"Pontuação Atual: {self.sum_result}")
+        
+        if card[0] == "A" and not self.list_sequence_card:
+            card = ("A", 11)
             
+        if self.sum_result >= 11:
             print("Deseja obter a proxima carta?")
-            random_decision = int(input("(Sim - 1, Não - 0): "))
+            try:
+                random_decision = int(input("(Sim - 1, Não - 0): "))
+            except ValueError:
+                random_decision = 0
 
             if random_decision:
-                if card[0] == "A" and self.list_sequence_card is None:
-                    card = ("A", 11)
                 print(f"O Jogador {self.name} aceitou uma nova carta!")
                 super().sum_the_results_of_the_cards(card)
             else:

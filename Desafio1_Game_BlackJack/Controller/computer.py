@@ -23,6 +23,11 @@ class Computer(BlackJackDefinitions):
         return super().randomize_card(game_cards)
 
     def player_decision_to_pick_up_the_card(self, card):
+        print(f"Pontuação Atual: {self.sum_result}")
+        
+        if card[0] == "A" and not self.list_sequence_card:
+            card = ("A", 11)
+            
         if self.sum_result >= 11:
             random_decision = randint(0,1) 
             if random_decision:

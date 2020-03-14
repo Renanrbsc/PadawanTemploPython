@@ -24,7 +24,7 @@ class BlackJackDefinitions:
         self.list_sequence_card.append(card[0])
         self.sum_result += card[1]
         print(f"Carta Recebida: {card}\n" \
-              f"Pontuação Atual: {self.sum_result}\n" \
+              f"Nova Pontuação: {self.sum_result}\n" \
               f"Sequencia de cartas: {self.list_sequence_card}")
 
             
