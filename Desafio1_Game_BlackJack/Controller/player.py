@@ -29,9 +29,11 @@ class Player(BlackJackDefinitions):
         if self.sum_result >= 11:
             
             print("Deseja obter a proxima carta?")
-            random_decision = input("(Sim - 1, Não - 0))")
+            random_decision = int(input("(Sim - 1, Não - 0): "))
 
             if random_decision:
+                if card[0] == "A" and self.list_sequence_card is None:
+                    card = ("A", 11)
                 print(f"O Jogador {self.name} aceitou uma nova carta!")
                 super().sum_the_results_of_the_cards(card)
             else:
@@ -41,7 +43,3 @@ class Player(BlackJackDefinitions):
         else:
             super().sum_the_results_of_the_cards(card)
 
-    def final_result(self, list_result_players):
-        super().final_result(list_result_players)  
-              
-     

@@ -1,7 +1,4 @@
-
-
 from random import randint
-from sys import exit
 
 from Controller.game_base import BlackJackDefinitions
 
@@ -37,9 +34,3 @@ class Computer(BlackJackDefinitions):
                 print(f"Sua Sequencia de cartas: {self.list_sequence_card}")
         else:
             super().sum_the_results_of_the_cards(card)
-
-    def final_result(self, list_result_players):
-        super().final_result(list_result_players)
-            
-              
-       
