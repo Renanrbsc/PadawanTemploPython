@@ -1,5 +1,6 @@
 from random import choice
           
+# classe base para herança de jogadores
 class BlackJackDefinitions:
 
     def __init__(self):

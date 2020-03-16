@@ -2,7 +2,7 @@ from random import randint
 
 from Controller.game_base import BlackJackDefinitions
 
-
+# Jogador tipo computador herdando do arquivo game_base
 class Computer(BlackJackDefinitions):
     def __init__(self, name):
         self.name = name
